@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>คณิตศาสตร์ - เซต, ตรรกศาสตร์</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Kanit', sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9fb;
+    color: #333;
+  }
+  h1, h2 {
+    color: #6a1b9a;
+  }
+  section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+  }
+  .summary {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  .example {
+    background: #f0e6fa;
+    padding: 15px 20px;
+    border-left: 6px solid #6a1b9a;
+    margin-bottom: 25px;
+    border-radius: 10px;
+  }
+  .question {
+    background: #e8d9f2;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  .options label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  button {
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 1.05em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #6a1b9a;
+  }
+  .answer {
+    background: #d4edda;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 15px 0 30px;
+    border-left: 8px solid #28a745;
+    display: none;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 0.95em;
+  }
+</style>
+<script>
+  function toggleAnswer(id) {
+    const ans = document.getElementById(id);
+    ans.style.display = (ans.style.display === "block") ? "none" : "block";
+  }
+</script>
+</head>
+<body>
+
+<h1>คณิตศาสตร์</h1>
+
+<section>
+  <h2>เซต (Set)</h2>
+  <p class="summary">
+    เซต คือกลุ่มของวัตถุหรือสมาชิกที่ชัดเจนและไม่ซ้ำกัน เราเขียนเซตโดยใช้วงเล็บปีกกา {} และสมาชิกแต่ละตัวเรียกว่า "สมาชิกของเซต" เซตมีหลายประเภท เช่น เซตจำกัด (มีสมาชิกจำนวนจำกัด) และเซตอนันต์ (สมาชิกไม่จำกัด) การดำเนินการบนเซตที่สำคัญได้แก่ ยูเนียน (∪) คือรวมสมาชิกทั้งหมด อินเตอร์เซคชัน (∩) คือสมาชิกที่อยู่ร่วมกัน และเซตย่อย (⊆) คือเซตที่สมาชิกทั้งหมดอยู่ในเซตอื่น
+  </p>
+  <div class="example">
+    <strong>ตัวอย่าง:</strong>  
+    ถ้า A = {1, 2, 3} และ B = {2, 3, 4}  
+    <br>ยูเนียน A ∪ B = {1, 2, 3, 4}  
+    <br>อินเตอร์เซคชัน A ∩ B = {2, 3}
+  </div>
+
+  <div class="question">
+    <b>โจทย์ 1:</b>  
+    ให้เซต A = {1, 3, 5, 7} และเซต B = {3, 4, 5, 6} จงหา A ∩ B คือเซตใด?
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> {1, 3, 4, 5, 6, 7}</label>
+      <label><input type="radio" name="q1" value="b"> {3, 5}</label>
+      <label><input type="radio" name="q1" value="c"> {1, 7}</label>
+      <label><input type="radio" name="q1" value="d"> {4, 6}</label>
+    </div>
+    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
+    <div class="answer" id="answer1">
+      เฉลย: A ∩ B = {3, 5} เพราะเป็นสมาชิกที่อยู่ในทั้ง A และ B
+    </div>
+  </div>
+
+  <div class="question">
+    <b>โจทย์ 2:</b>  
+    เซตใดต่อไปนี้คือเซตว่าง (ไม่มีสมาชิก)?
+    <div class="options">
+      <label><input type="radio" name="q2" value="a"> {0}</label>
+      <label><input type="radio" name="q2" value="b"> { }</label>
+      <label><input type="radio" name="q2" value="c"> {1, 2}</label>
+      <label><input type="radio" name="q2" value="d"> {null}</label>
+    </div>
+    <button onclick="toggleAnswer('answer2')">ดูเฉลย</button>
+    <div class="answer" id="answer2">
+      เฉลย: เซตว่างคือเซตที่ไม่มีสมาชิก เขียนแทนด้วย { } หรือ ∅
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>ตรรกศาสตร์ (Logic)</h2>
+  <p class="summary">
+    ตรรกศาสตร์เป็นสาขาคณิตศาสตร์ที่ศึกษาเกี่ยวกับความถูกต้องของเหตุผลและรูปแบบการสรุปความรู้ต่างๆ โดยใช้สัญลักษณ์แทน เช่น “และ” (∧), “หรือ” (∨), “ไม่” (¬) ข้อความประเภท “ถ้า...แล้ว...” เรียกว่า เงื่อนไขแบบมีเหตุมีผล ตรรกศาสตร์ช่วยให้เราวิเคราะห์และแก้ปัญหาอย่างเป็นระบบและมีเหตุผล
+  </p>
+  <div class="example">
+    <strong>ตัวอย่าง:</strong>  
+    ประโยค “ถ้า ฝนตก ฉันจะไม่ไปโรงเรียน” แปลว่า “ถ้าฝนตก (p) แล้ว ฉันไม่ไปโรงเรียน (q)” ซึ่งเขียนในตรรกศาสตร์ได้ว่า p → q
+  </div>
+
+  <div class="question">
+    <b>โจทย์ 3:</b>  
+    ข้อความ “ถ้า ฝนตก ฉันจะไม่ไปโรงเรียน” เป็นเงื่อนไขแบบใด?
+    <div class="options">
+      <label><input type="radio" name="q3" value="a"> เงื่อนไขสมมติ</label>
+      <label><input type="radio" name="q3" value="b"> เงื่อนไขถ้า-แล้ว</label>
+      <label><input type="radio" name="q3" value="c"> เงื่อนไขอนุมาน</label>
+      <label><input type="radio" name="q3" value="d"> เงื่อนไขทางคณิตศาสตร์</label>
+    </div>
+    <button onclick="toggleAnswer('answer3')">ดูเฉลย</button>
+    <div class="answer" id="answer3">
+      เฉลย: ข้อความนี้เป็นเงื่อนไขถ้า-แล้ว (If-then condition)
+    </div>
+  </div>
+
+  <div class="question">
+    <b>โจทย์ 4:</b>  
+    ในตรรกศาสตร์ คำว่า “และ” ใช้แทนด้วยสัญลักษณ์ใด?
+    <div class="options">
+      <label><input type="radio" name="q4" value="a"> ∧</label>
+      <label><input type="radio" name="q4" value="b"> ∨</label>
+      <label><input type="radio" name="q4" value="c"> →</label>
+      <label><input type="radio" name="q4" value="d"> ¬</label>
+    </div>
+    <button onclick="toggleAnswer('answer4')">ดูเฉลย</button>
+    <div class="answer" id="answer4">
+      เฉลย: “และ” ในตรรกศาสตร์แทนด้วยสัญลักษณ์ ∧
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 ศูนย์เรียนรู้วิชาคณิตศาสตร์
+</footer>
+
+</body>
+</html>
+
