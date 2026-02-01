@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>เคมี - โมลและสูตรเคมี</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Kanit', sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9fb;
+    color: #333;
+  }
+  h1, h2 {
+    color: #6a1b9a;
+  }
+  section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+  }
+  .summary {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  .example {
+    background: #f0e6fa;
+    padding: 15px 20px;
+    border-left: 6px solid #6a1b9a;
+    margin-bottom: 25px;
+    border-radius: 10px;
+  }
+  .question {
+    background: #e8d9f2;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  .options label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  button {
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 1.05em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #6a1b9a;
+  }
+  .answer {
+    background: #d4edda;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 15px 0 30px;
+    border-left: 8px solid #28a745;
+    display: none;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 0.95em;
+  }
+</style>
+<script>
+  function toggleAnswer(id) {
+    const ans = document.getElementById(id);
+    ans.style.display = (ans.style.display === "block") ? "none" : "block";
+  }
+</script>
+</head>
+<body>
+
+<h1>เคมี</h1>
+
+<section>
+  <h2>โมลและสูตรเคมี (The Mole and Chemical Formulas)</h2>
+  <p class="summary">
+    <b> 1.โมล (mol)</b> คือ หน่วยที่ใช้บอก “จำนวนอนุภาค” ของสารโดย<br>
+    <b>1 mol = 6.02 × 10<sup>23</sup> อนุภาค</b><br>
+    อนุภาคอาจเป็น <b>อะตอม</b> (เช่น Na, Fe),<b>โมเลกุล</b> (เช่น H₂O, CO₂),<b>ไอออน</b> (เช่น Na⁺, Cl⁻)<br>
+    <b>2.มวลโมล (Molar mass)</b><br>
+    -<b>มวลของสาร 1 โมล</b><br>
+    -หน่วยเป็น <b>กรัมต่อโมล</b> (g/mol)<br>
+    -คำนวณจากตารางธาตุ<br>
+    <b>ตัวอย่าง</b>  <br>
+H = 1 g/mol<br>
+O = 16 g/mol<br>
+H₂O = (2×1) + 16 = 18 g/mol<br>
+<b>3.ความสัมพันธ์ โมล–มวล–อนุภาค</b><br>
+(1) มวล ↔ โมล<br>
+mol=<sup>g</sup>&frasl;<sub>Mw</sub><br>
+(2) โมล ↔ จำนวนอนุภาค<br>
+N = mol × 6.02 × 10<sup>23</sup><br>
+<b>4.สูตรเคมี</b><br>
+สูตรอย่างง่าย (Empirical formula)<br>
+แสดงอัตราส่วนอย่างต่ำของอะตอมไม่บอกจำนวนจริง<br>
+<b>ตัวอย่าง</b><br>
+C₆H₁₂O₆ → สูตรอย่างง่าย = CH₂O<br>
+<b>สูตรโมเลกุล (Molecular formula)</b><br>
+แสดงจำนวนอะตอมจริงในโมเลกุลหาได้จาก<BR>
+    <b>สูตรโมเลกุล=(สูตรอย่างง่าย)×n</b><br>
+    โดย<br>
+  <b>n =<sup>มวลโมเลกุลจริง</sup>&frasl;<sub>มวลสูตรอย่างง่าย</sub></b>
+  <div class="example">
+    <strong>โจทย์ที่ 1 </strong>  
+    สารชนิดหนึ่งมีมวล 18 กรัม และมีมวลโมล 36 g/mol
+  </div>
+
+  <div class="question">
+  <b>สารนี้มีจำนวนโมลเท่าใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> 0.25 mol</label>
+      <label><input type="radio" name="q1" value="b"> 0.5 mol</label>
+      <label><input type="radio" name="q1" value="c"> 1 mol</label>
+      <label><input type="radio" name="q1" value="d"> 2 mol</label>
+    </div>
+    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
+    <div class="answer" id="answer1">
+      เฉลย: 0.5 mol  เพราะ n =<sup>18</sup>&frasl;<sub>36</sub>= 0.5
+    </div>
+  </div>
+
+  <div class="example">
+    <strong>โจทย์ที่ 2 </strong>  
+    สาร X มีสูตรอย่างง่ายเป็น CH₂ และมีมวลโมเลกุล 56 g/mol
+  </div>
+
+  <div class="question">
+  <b>สูตรโมเลกุลของสาร X คือข้อใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> C₂H₄</label>
+      <label><input type="radio" name="q1" value="b"> C₃H₆</label>
+      <label><input type="radio" name="q1" value="c"> C₄H₈</label>
+      <label><input type="radio" name="q1" value="d"> C₅H₁₀</label>
+    </div>
+    <button onclick="toggleAnswer('answer2')">ดูเฉลย</button>
+    <div class="answer" id="answer2">
+      เฉลย: C₄H₈ เพราะ 56÷14=4 เเล้ว มวล CH₂ = 14
+    </div>
+  </div>
+  <div class="example">
+    <strong>โจทย์ที่ 3 </strong>  
+    แก๊สออกซิเจน 1 โมล
+  </div>
+
+  <div class="question">
+  <b>มีจำนวนโมเลกุลเท่าใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> 3.01 × 10<sup>23</sup></label>
+      <label><input type="radio" name="q1" value="b"> 6.02 × 10<sup>23</sup></label>
+      <label><input type="radio" name="q1" value="c"> 1.20 × 10<sup>24</sup></label>
+      <label><input type="radio" name="q1" value="d"> 12.04 × 10<sup>23</sup></label>
+    </div>
+    <button onclick="toggleAnswer('answer3')">ดูเฉลย</button>
+    <div class="answer" id="answer3">
+      เฉลย: 6.02 × 10<sup>23</sup> เพราะ 1 mol = 6.02 × 10<sup>23</sup>
+    </div>
+  </div>
+</section>
