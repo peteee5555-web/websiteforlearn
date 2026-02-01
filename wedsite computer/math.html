@@ -1,404 +1,122 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>คณิตศาสตร์ - ความสัมพันธ์เเละฟังก์ชั่น,ฟังก์ชั่น,เรขาวิเคราะห์,ภาพตัดกรวย</title>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
-<style>
-  body {
-    font-family: 'Kanit', sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: #f9f9fb;
-    color: #333;
-  }
-  h1, h2 {
-    color: #6a1b9a;
-  }
-  section {
-    margin-bottom: 50px;
-    background: white;
-    padding: 25px 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
-  }
-  .summary {
-    font-size: 1.1em;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 30px;
-  }
-  .example {
-    background: #f0e6fa;
-    padding: 15px 20px;
-    border-left: 6px solid #6a1b9a;
-    margin-bottom: 25px;
-    border-radius: 10px;
-  }
-  .question {
-    background: #e8d9f2;
-    padding: 18px 22px;
-    border-radius: 12px;
-    margin: 20px 0;
-  }
-  .options label {
-    display: block;
-    margin: 10px 0;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  button {
-    background-color: #7b1fa2;
-    color: white;
-    border: none;
-    padding: 10px 22px;
-    font-size: 1.05em;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 12px;
-    transition: background-color 0.3s;
-  }
-  button:hover {
-    background-color: #6a1b9a;
-  }
-  .answer {
-    background: #d4edda;
-    padding: 18px 22px;
-    border-radius: 12px;
-    margin: 15px 0 30px;
-    border-left: 8px solid #28a745;
-    display: none;
-    font-size: 1em;
-    line-height: 1.6;
-  }
-  footer {
-    text-align: center;
-    margin-top: 60px;
-    color: #777;
-    font-size: 0.95em;
-  }
-</style>
-<script>
-  function toggleAnswer(id) {
-    const ans = document.getElementById(id);
-    ans.style.display = (ans.style.display === "block") ? "none" : "block";
-  }
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ศูนย์เรียนรู้สาระวิชาหลัก</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e1bee7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    header {
+      font-size: 2.5em;
+      font-weight: 600;
+      color: #4a148c;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 40px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+      font-size: 1.6em;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 25px;
+      font-size: 1em;
+      border-radius: 8px;
+      text-decoration: none;
+      background: linear-gradient(45deg, #7b1fa2, #ce93d8);
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease;
+    }
+
+    .card a:hover {
+      background: linear-gradient(45deg, #6a1b9a, #ba68c8);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr; /* บนมือถือเป็น 1 คอลัมน์ */
+        max-width: 400px;
+      }
+      header {
+        font-size: 1.8em;
+      }
+      .card h2 {
+        font-size: 1.3em;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>🌈 คณิตศาสตร์ 🌈</header>
 
-<h1>คณิตศาสตร์</h1>
-
-<section>
-  <h2>ความสัมพันธ์ (Relation)</h2>
-  <p class="summary">
-    ความสัมพันธ์ คือ การจับคู่สมาชิกของเซตหนึ่งกับสมาชิกของอีกเซตหนึ่ง โดยการจับคู่นั้นเขียนในรูปของ คู่ลำดับ (x, y) ซึ่ง x มาจากเซตต้น และ y มาจากเซตปลาย ความสัมพันธ์สามารถเขียนได้หลายรูปแบบ เช่น เขียนเป็นเซตของคู่ลำดับ แผนภาพลูกศร หรือกราฟบนระนาบ
-  </p>
-  <div class="example">
-    <strong>โจทย์ที่ 1 </strong>  
-    กำหนดเซต A={1,2,3} และ B={2,4,6}
-    <br>ให้ความสัมพันธ์ R={(1,2),(2,4),(3,6)}
-  </div>
-
-  <div class="question">
-  <b>1.R เป็นความสัมพันธ์จาก A ไป B หรือไม่</b><br>
-
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> ใช่</label>
-      <label><input type="radio" name="q1" value="b"> ไม่</label>
+  <div class="grid">
+    <div class="card">
+      <h2>ความสัมพันธ์<br>(relation)</h2>
+      <a href="relation.html">เข้าเรียน</a>
     </div>
-    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
-    <div class="answer" id="answer1">
-      เฉลย: ใช่ เพราะตรวจดูสมาชิกของ R ตัวหน้าอยู่ใน A ✔ตัวหลังอยู่ใน B ✔
+    <div class="card">
+      <h2>ฟังก์ชัน<br>(Function)</h2>
+      <a href="Function.html">เข้าเรียน</a>
+    </div>
+    <div class="card">
+      <h2>เรขาคณิตวิเคราะห์<br>(Analytic Geometry)</h2>
+      <a href="Analytic Geometry.html">เข้าเรียน</a>
+    </div>
+    <div class="card">
+      <h2>ภาพตัดกรวย<br> (Conic Sections)</h2>
+      <a href="Conic Sections.html">เข้าเรียน</a>
     </div>
   </div>
 
-  <div class="question">
-    <b>2.ข้อใดคือสมาชิกของ R ที่เป็นสมาชิกใน A</b>  
-    <div class="options">
-      <label><input type="radio" name="q2" value="a"> {1,2,3}</label>
-      <label><input type="radio" name="q2" value="b"> {2,4,6}</label>
-    </div>
-    <button onclick="toggleAnswer('answer2')">ดูเฉลย</button>
-    <div class="answer" id="answer2">
-      เฉลย: {1,2,3}
-    </div>
-  </div>
-  <div class="example">
-    <strong>โจทย์ที่ 2 </strong>  
-    กำหนดความสัมพันธ์ R={(1,1),(2,2),(3,3)}
-  </div>
-
-  <div class="question">
-  <b>1.จงพิจารณาว่า R เป็นความสัมพันธ์แบบเอกลักษณ์</b><br>
-
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> ใช่</label>
-      <label><input type="radio" name="q1" value="b"> ไม่</label>
-    </div>
-    <button onclick="toggleAnswer('answer3')">ดูเฉลย</button>
-    <div class="answer" id="answer3">
-      เฉลย: ใช่ เพราะ ตัวหน้าและตัวหลังเป็นตัวเดียวกันทุกคู่
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>ฟังก์ชัน (Function) </h2>
-  <p class="summary">
-    ฟังก์ชัน คือ ความสัมพันธ์ชนิดพิเศษที่สมาชิกทุกตัวในเซตต้น ต้องจับคู่กับสมาชิกในเซตปลายได้เพียงค่าเดียวเท่านั้น ถ้าสมาชิกตัวใดตัวหนึ่งในเซตต้นจับคู่ได้มากกว่า 1 ค่า จะไม่ถือว่าเป็นฟังก์ชัน<br>
-    <b>ตัวอย่าง</b><br>
-
-ให้ f = {(1,2), (2,4), (3,6)}  <br>
-<b>ความสัมพันธ์นี้เป็นฟังก์ชัน</b> เพราะสมาชิกในเซตต้นแต่ละตัวมีค่าคู่เพียงค่าเดียว<br>
-
-<b>ตัวอย่าง (ไม่เป็นฟังก์ชัน)</b><br>
-
-f = {(1,2), (1,3), (2,4)}<br>
-<b>ไม่เป็นฟังก์ชัน</b> เพราะ 1 จับคู่กับ 2 ค่า<br>
-  </p>
-  <div class="example">
-    <strong>โจทย์ที่ 1 </strong>  
-     F={(1,3),(2,5),(3,7),(4,9)}
-  </div>
-
-  <div class="question">
-  <b>1.R เป็นความสัมพันธ์จาก A ไป B หรือไม่</b><br>
-
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> ใช่</label>
-      <label><input type="radio" name="q1" value="b"> ไม่</label>
-    </div>
-    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
-    <div class="answer" id="answer1">
-      เฉลย: ใช่ เพราะตรวจดูสมาชิกของ R ตัวหน้าอยู่ใน A ✔ตัวหลังอยู่ใน B ✔
-    </div>
-  </div>
-
-  <div class="example">
-    <strong>โจทย์ที่ 2 </strong>  
-    G={(2,4),(4,8),(6,12),(8,16)}
-  </div>
-
-  <div class="question">
-  <b>1.โดเมนของ G</b><br>
-
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> {2, 4, 6, 8}</label>
-      <label><input type="radio" name="q1" value="b"> {4, 8, 12, 16}</label>
-    </div>
-    <button onclick="toggleAnswer('answer4')">ดูเฉลย</button>
-    <div class="answer" id="answer4">
-      เฉลย: {2, 4, 6, 8}
-    </div>
-  </div>
-  <div class="question">
-  <b>2.เรนจ์ของ G</b><br>
-
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> {2, 4, 6, 8}</label>
-      <label><input type="radio" name="q1" value="b"> {4, 8, 12, 16}</label>
-    </div>
-    <button onclick="toggleAnswer('answer5')">ดูเฉลย</button>
-    <div class="answer" id="answer5">
-      เฉลย: {4, 8, 12, 16}
-    </div>
-  </div>
-  <div class="example">
-    <strong>โจทย์ที่ 2 </strong>  
-   H={(1,2),(1,4),(2,6)}
-  </div>
-  <div class="question">
-  <b>1.จงพิจารณาว่า H เป็นฟังก์ชันหรือไม่</b><br>
-
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> เป็นฟังก์ชัน</label>
-      <label><input type="radio" name="q1" value="b"> ไม่เป็นฟังก์ชัน</label>
-    </div>
-    <button onclick="toggleAnswer('answer5')">ดูเฉลย</button>
-    <div class="answer" id="answer5">
-      เฉลย: เป็นฟังก์ชัน เพราะสมาชิกตัวหน้าซ้ำ
-    </div>
-</section>
-
-<section>
-  <h3>เรขาคณิตวิเคราะห์ (Analytic Geometry)</h3>
-  <p class="summary">
-    เรขาคณิตวิเคราะห์ คือ การศึกษาความสัมพันธ์ระหว่าง เรขาคณิต (จุด เส้นตรง รูปร่าง) กับ พีชคณิต โดยใช้ระบบพิกัดฉาก (Cartesian Coordinate System) เพื่ออธิบายตำแหน่งและสมการของรูปเรขาคณิตต่าง ๆ บนระนาบ<br>
-    ระบบพิกัดฉาก (Cartesian Coordinate System)<br>
-
-<b>ระบบพิกัดฉากประกอบด้วย</b><br>
-
-<b>แกน x</b> (แกนนอน)<br>
-
-<b>แกน y</b> (แกนตั้ง)<br>
-
-<b>จุดใด ๆ บนระนาบเขียนแทนด้วย คู่ลำดับ (x, y)
-โดย</b><br>
-
-<b>x คือ พิกัดตามแกน x</b><br>
-
-<b>y คือ พิกัดตามแกน y</b><br>
-<b>ตัวอย่าง</b><br>
-
-จุด A(2, 3) หมายถึง
-เคลื่อนไปทางขวา 2 หน่วย และขึ้นด้านบน 3 หน่วย
-  </p>
-  <div class="example">
-    <strong>โจทย์ที่ 1</strong>  
-    กำหนดให้จุด P(−3, 5)
-  </div>
-
-  <div class="question">
-    <b>1.</b>  
-    จุด P อยู่ในควอแดรนต์ใด
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> ควอแดรนต์ที่ 1</label>
-      <label><input type="radio" name="q1" value="b"> ควอแดรนต์ที่ 2</label>
-      <label><input type="radio" name="q1" value="c"> ควอแดรนต์ที่ 3</label>
-      <label><input type="radio" name="q1" value="d"> ควอแดรนต์ที่ 4</label>
-    </div>
-    <button onclick="toggleAnswer('answer6')">ดูเฉลย</button>
-    <div class="answer" id="answer6">
-      เฉลย: ควอแดรนต์ที่ 2
-    </div>
-  </div>
-<p class="summary">
-    <b>ระยะทางระหว่างจุดสองจุด</b><br>
-
-ถ้ากำหนดให้
-A(x₁, y₁) และ B(x₂, y₂)
-
-ระยะทาง AB คำนวณจากสูตร<br>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-
-<p>
-  $$AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
-</p>
-
+  <footer>© 2026 ศูนย์การเรียนรู้พัฒนาทักษะนักเรียนไทย 🇹🇭</footer>
 </body>
 </html>
-</p>
-<div class="example">
-    <strong>โจทย์ที่ 1</strong>  
-    กำหนดให้จุด
-A(2, 3) และ B(6, 7)
-  </div>
-
-  <div class="question">
-    <b>1.</b>  
-    ระยะทางระหว่างจุด A และ B เท่ากับเท่าใด
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> 4</label>
-      <label><input type="radio" name="q1" value="b"> √16</label>
-      <label><input type="radio" name="q1" value="c"> √50</label>
-      <label><input type="radio" name="q1" value="d"> √32</label>
-    </div>
-    <button onclick="toggleAnswer('answer7')">ดูเฉลย</button>
-    <div class="answer" id="answer7">
-      เฉลย: √32
-    </div>
-  </div>
-  <p class="summary">
-    <b>ระยะทางระหว่างจุดสองจุด</b><br>
-
-ถ้ากำหนดให้
-A(x₁, y₁) และ B(x₂, y₂)
-
-ระยะทาง AB คำนวณจากสูตร<br>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-
-<p>
-  $$ \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right) $$
-</p>
-
-</body>
-</html>
-<div class="example">
-    <strong>โจทย์ที่ 1</strong>  
-    กำหนดให้จุด
-A(2, 3) และ B(6, 7)
-  </div>
-
-  <div class="question">
-    <b>1.</b>  
-    ระยะทางระหว่างจุด A และ B เท่ากับเท่าใด
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> 4</label>
-      <label><input type="radio" name="q1" value="b"> √16</label>
-      <label><input type="radio" name="q1" value="c"> √50</label>
-      <label><input type="radio" name="q1" value="d"> √32</label>
-    </div>
-    <button onclick="toggleAnswer('answer7')">ดูเฉลย</button>
-    <div class="answer" id="answer7">
-      เฉลย: √32
-    </div>
-  </div>
-</section>
-
-<section>
-  <h4>เซต (Set)</h4>
-  <p class="summary">
-    เซต คือกลุ่มของวัตถุหรือสมาชิกที่ชัดเจนและไม่ซ้ำกัน เราเขียนเซตโดยใช้วงเล็บปีกกา {} และสมาชิกแต่ละตัวเรียกว่า "สมาชิกของเซต" เซตมีหลายประเภท เช่น เซตจำกัด (มีสมาชิกจำนวนจำกัด) และเซตอนันต์ (สมาชิกไม่จำกัด) การดำเนินการบนเซตที่สำคัญได้แก่ ยูเนียน (∪) คือรวมสมาชิกทั้งหมด อินเตอร์เซคชัน (∩) คือสมาชิกที่อยู่ร่วมกัน และเซตย่อย (⊆) คือเซตที่สมาชิกทั้งหมดอยู่ในเซตอื่น
-  </p>
-  <div class="example">
-    <strong>ตัวอย่าง:</strong>  
-    ถ้า A = {1, 2, 3} และ B = {2, 3, 4}  
-    <br>ยูเนียน A ∪ B = {1, 2, 3, 4}  
-    <br>อินเตอร์เซคชัน A ∩ B = {2, 3}
-  </div>
-
-  <div class="question">
-    <b>โจทย์ 1:</b>  
-    ให้เซต A = {1, 3, 5, 7} และเซต B = {3, 4, 5, 6} จงหา A ∩ B คือเซตใด?
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> {1, 3, 4, 5, 6, 7}</label>
-      <label><input type="radio" name="q1" value="b"> {3, 5}</label>
-      <label><input type="radio" name="q1" value="c"> {1, 7}</label>
-      <label><input type="radio" name="q1" value="d"> {4, 6}</label>
-    </div>
-    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
-    <div class="answer" id="answer1">
-      เฉลย: A ∩ B = {3, 5} เพราะเป็นสมาชิกที่อยู่ในทั้ง A และ B
-    </div>
-  </div>
-
-  <div class="question">
-    <b>โจทย์ 2:</b>  
-    เซตใดต่อไปนี้คือเซตว่าง (ไม่มีสมาชิก)?
-    <div class="options">
-      <label><input type="radio" name="q2" value="a"> {0}</label>
-      <label><input type="radio" name="q2" value="b"> { }</label>
-      <label><input type="radio" name="q2" value="c"> {1, 2}</label>
-      <label><input type="radio" name="q2" value="d"> {null}</label>
-    </div>
-    <button onclick="toggleAnswer('answer2')">ดูเฉลย</button>
-    <div class="answer" id="answer2">
-      เฉลย: เซตว่างคือเซตที่ไม่มีสมาชิก เขียนแทนด้วย { } หรือ ∅
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 ศูนย์เรียนรู้วิชาคณิตศาสตร์
-</footer>
-
-</body>
-</html>
-
