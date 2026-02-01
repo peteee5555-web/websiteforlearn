@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>คณิตศาสตร์ - ความสัมพันธ์เเละฟังก์ชั่น,ฟังก์ชั่น,เรขาวิเคราะห์,ภาพตัดกรวย</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Kanit', sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9fb;
+    color: #333;
+  }
+  h1, h2 {
+    color: #6a1b9a;
+  }
+  section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+  }
+  .summary {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  .example {
+    background: #f0e6fa;
+    padding: 15px 20px;
+    border-left: 6px solid #6a1b9a;
+    margin-bottom: 25px;
+    border-radius: 10px;
+  }
+  .question {
+    background: #e8d9f2;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  .options label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  button {
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 1.05em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #6a1b9a;
+  }
+  .answer {
+    background: #d4edda;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 15px 0 30px;
+    border-left: 8px solid #28a745;
+    display: none;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 0.95em;
+  }
+</style>
+<script>
+  function toggleAnswer(id) {
+    const ans = document.getElementById(id);
+    ans.style.display = (ans.style.display === "block") ? "none" : "block";
+  }
+</script>
+</head>
+<body>
+<section>
+  <h3>เรขาคณิตวิเคราะห์ (Analytic Geometry)</h3>
+  <p class="summary">
+    <p class="summary">
+    เรขาคณิตวิเคราะห์ คือ การศึกษาความสัมพันธ์ระหว่าง เรขาคณิต (จุด เส้นตรง รูปร่าง) กับ พีชคณิต โดยใช้ระบบพิกัดฉาก (Cartesian Coordinate System) เพื่ออธิบายตำแหน่งและสมการของรูปเรขาคณิตต่าง ๆ บนระนาบ<br>
+    ระบบพิกัดฉาก (Cartesian Coordinate System)<br>
+<b>ระบบพิกัดฉากประกอบด้วย</b><br>
+<b>แกน x</b> (แกนนอน)<br>
+<b>แกน y</b> (แกนตั้ง)<br>
+  </p>
+  <div class="example">
+    <strong>โจทย์ที่ 1 </strong>  
+     กำหนดให้จุด P(−3, 5)
+  </div>
+
+  <div class="question">
+  <b>1.จุด P อยู่ในควอแดรนต์ใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> ควอแดรนต์ที่ 1</label>
+      <label><input type="radio" name="q1" value="b"> ควอแดรนต์ที่ 2</label>
+      <label><input type="radio" name="q1" value="c"> ควอแดรนต์ที่ 3</label>
+      <label><input type="radio" name="q1" value="d"> ควอแดรนต์ที่ 4</label>
+    </div>
+    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
+    <div class="answer" id="answer1">
+      เฉลย: ควอแดรนต์ที่ 2
+    </div>
+  </div>
+
+  <p class="summary">
+    <p class="summary">
+    <b>ระยะทางระหว่างจุดสองจุด</b><br>
+ถ้ากำหนดให้
+A(x₁, y₁) และ B(x₂, y₂)
+
+ระยะทาง AB คำนวณจากสูตร<br>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<p>
+  $$AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
+</p>
+
+</body>
+</html>
+
+  </p>
+  <div class="example">
+    <strong>โจทย์ที่ 1 </strong>  
+     กำหนดให้จุด
+A(2, 3) และ B(6, 7)
+  </div>
+
+  <div class="question">
+  <b>1.ระยะทางระหว่างจุด A และ B เท่ากับเท่าใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> 4</label>
+      <label><input type="radio" name="q1" value="b"> √16</label>
+      <label><input type="radio" name="q1" value="c"> √50</label>
+      <label><input type="radio" name="q1" value="d"> √32</label>
+    </div>
+    <button onclick="toggleAnswer('answer2')">ดูเฉลย</button>
+    <div class="answer" id="answer2">
+      เฉลย: √32
+    </div>
+  </div>
+  <p class="summary">
+    <p class="summary">
+    <b>จุดกึ่งกลางของเส้นตรง</b><br>
+ถ้า A(x₁, y₁) และ B(x₂, y₂)
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<p>
+  $$ \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right) $$
+</p>
+
+</body>
+</html>
+
+
+  </p>
+  <div class="example">
+    <strong>โจทย์ที่ 1 </strong>  
+     กำหนดให้จุด
+C(−4, 2) และ D(2, −4)
+  </div>
+
+  <div class="question">
+  <b>1.จุดกึ่งกลางของเส้นตรง CD คือข้อใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> (−1, −1)</label>
+      <label><input type="radio" name="q1" value="b"> (−2, −2)</label>
+      <label><input type="radio" name="q1" value="c"> (1, −1)</label>
+      <label><input type="radio" name="q1" value="d"> (0, 0)</label>
+    </div>
+    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
+    <div class="answer" id="answer1">
+      เฉลย: (−1, −1)
+    </div>
+  </div>
+
+  
+ 
+
+<b>แกน x</b> (แกนนอน)<br>
+<b>แกน y</b> (แกนตั้ง)<br>
+<b>จุดใด ๆ บนระนาบเขียนแทนด้วย คู่ลำดับ (x, y)
+โดย</b><br>
+<b>x คือ พิกัดตามแกน x</b><br>
+<b>y คือ พิกัดตามแกน y</b><br>
+<b>ตัวอย่าง</b><br>
+จุด A(2, 3) หมายถึงเคลื่อนไปทางขวา 2 หน่วย และขึ้นด้านบน 3 หน่วย
+  </p>
+  <div class="example">
+    <strong>โจทย์ที่ 1 </strong>  
+     กำหนดให้จุด P(−3, 5)
+  </div>
+
+  <div class="question">
+  <b>1.จุด P อยู่ในควอแดรนต์ใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> ควอแดรนต์ที่ 1</label>
+      <label><input type="radio" name="q1" value="b"> ควอแดรนต์ที่ 2</label>
+      <label><input type="radio" name="q1" value="c"> ควอแดรนต์ที่ 3</label>
+      <label><input type="radio" name="q1" value="d"> ควอแดรนต์ที่ 4</label>
+    </div>
+    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
+    <div class="answer" id="answer1">
+      เฉลย: ควอแดรนต์ที่ 2
+    </div>
+  </div>
+</section>

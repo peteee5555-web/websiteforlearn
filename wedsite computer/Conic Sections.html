@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>คณิตศาสตร์ - ความสัมพันธ์เเละฟังก์ชั่น,ฟังก์ชั่น,เรขาวิเคราะห์,ภาพตัดกรวย</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Kanit', sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9fb;
+    color: #333;
+  }
+  h1, h2 {
+    color: #6a1b9a;
+  }
+  section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+  }
+  .summary {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  .example {
+    background: #f0e6fa;
+    padding: 15px 20px;
+    border-left: 6px solid #6a1b9a;
+    margin-bottom: 25px;
+    border-radius: 10px;
+  }
+  .question {
+    background: #e8d9f2;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  .options label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  button {
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 1.05em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #6a1b9a;
+  }
+  .answer {
+    background: #d4edda;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 15px 0 30px;
+    border-left: 8px solid #28a745;
+    display: none;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 0.95em;
+  }
+</style>
+<script>
+  function toggleAnswer(id) {
+    const ans = document.getElementById(id);
+    ans.style.display = (ans.style.display === "block") ? "none" : "block";
+  }
+</script>
+</head>
+<body>
+<section>
+  <h2>ภาพตัดกรวย (Conic Sections) </h2>
+  <p class="summary">
+    ภาพตัดกรวย คือ เส้นโค้งที่เกิดจากการตัดกรวยด้วยระนาบในลักษณะต่าง ๆ เช่น <br>
+    <b>1. วงกลม</b><br>
+ความหมายวงกลม คือ เซตของจุดทุกจุดบนระนาบที่อยู่ห่างจากจุดคงที่จุดหนึ่ง (จุดศูนย์กลาง) เป็นระยะทางเท่ากัน<br>
+สมการวงกลม<br>ถ้าจุดศูนย์กลางอยู่ที่ (a, b) และรัศมี r สูตรดังนี้<br>
+  (x − a)<sup>2</sup> + (y − b)<sup>2</sup> = r<sup>2</sup><br>
+<b>2.วงรี</b><br>
+ความหมายวงรี คือ เซตของจุดที่ผลบวกระยะทางจากจุดคงที่สองจุด (โฟกัส) มีค่าคงที่<br>
+สมการวงรีมีสองอย่างดังนี้<br>
+  <sup>x<sup>2</sup></sup>&frasl;<sub>a<sup>2</sup></sub>
+  +
+  <sup>y<sup>2</sup></sup>&frasl;<sub>b<sup>2</sup></sub>
+  = 1 รีตามเเกน x <br>
+<sup>x<sup>2</sup></sup>&frasl;<sub>b<sup>2</sup></sub>
+  +
+  <sup>y<sup>2</sup></sup>&frasl;<sub>a<sup>2</sup></sub>
+= 1 รีตามเเกน y <br>
+  </p>
+  <div class="example">
+    <strong>โจทย์ที่ 1 </strong>  
+     กำหนดวงกลม x<sup>2</sup> + y<sup>2</sup> = 25
+  </div>
+
+  <div class="question">
+  <b>1.ข้อใดคือรัศมีของวงกลม</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> 3</label>
+      <label><input type="radio" name="q1" value="b"> 4</label>
+      <label><input type="radio" name="q1" value="c"> 5</label>
+      <label><input type="radio" name="q1" value="d"> 25</label>
+    </div>
+    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
+    <div class="answer" id="answer1">
+      เฉลย: 5
+    </div>
+  </div>
+
+  <div class="example">
+    <strong>โจทย์ที่ 2 </strong>  
+  จากสมการ <sup>x<sup>2</sup></sup>&frasl;<sub>25</sub>
+  +
+  <sup>y<sup>2</sup></sup>&frasl;<sub>9</sub>
+  = 1
+  </div>
+
+  <div class="question">
+  <b>1.ข้อใดถูกต้อง</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> ศูนย์กลาง (0,0)</label>
+      <label><input type="radio" name="q1" value="b"> แกนเอกยาว 10</label>
+      <label><input type="radio" name="q1" value="c"> แกนโทยาว 6</label>
+      <label><input type="radio" name="q1" value="d"> ถูกทุกข้อ</label>
+    </div>
+    <button onclick="toggleAnswer('answer4')">ดูเฉลย</button>
+    <div class="answer" id="answer4">
+      เฉลย: ถูกทุกข้อ
+    </div>
+  </div>
+  
+</section>
