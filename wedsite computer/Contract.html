@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>สังคม - สัญญา</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Kanit', sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9fb;
+    color: #333;
+  }
+  h1, h2 {
+    color: #6a1b9a;
+  }
+  section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+  }
+  .summary {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  .example {
+    background: #f0e6fa;
+    padding: 15px 20px;
+    border-left: 6px solid #6a1b9a;
+    margin-bottom: 25px;
+    border-radius: 10px;
+  }
+  .question {
+    background: #e8d9f2;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  .options label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  button {
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 1.05em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #6a1b9a;
+  }
+  .answer {
+    background: #d4edda;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 15px 0 30px;
+    border-left: 8px solid #28a745;
+    display: none;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 0.95em;
+  }
+</style>
+<script>
+  function toggleAnswer(id) {
+    const ans = document.getElementById(id);
+    ans.style.display = (ans.style.display === "block") ? "none" : "block";
+  }
+</script>
+</head>
+<body>
+
+<h1>สังคม</h1>
+
+<section>
+  <h2>สัญญา</h2>
+  <p class="summary">
+<b>สัญญา</b> คือ ข้อตกลงระหว่างบุคคลตั้งแต่ 2 ฝ่ายขึ้นไป ที่ก่อให้เกิดสิทธิและหน้าที่ตามกฎหมาย<br>
+<B>องค์ประกอบของสัญญาที่สมบูรณ์</B><br>
+<b>คู่สัญญา</b><br>
+<b>1.ต้องมีความสามารถตามกฎหมาย</b><br>
+ไม่เป็นผู้เยาว์หรือคนไร้ความสามารถ<br>
+<b>2.การแสดงเจตนา</b><br>
+สมัครใจ ไม่มีการบังคับ หลอกลวง<br>
+<b>3.วัตถุประสงค์ของสัญญา</b><br>
+ต้องไม่ผิดกฎหมายไม่ขัดศีลธรรมอันดี<br>
+<b>4.แบบของสัญญา (บางกรณี)</b><br>
+ต้องทำเป็นลายลักษณ์อักษร เช่น ซื้อขายที่ดิน<br>
+<b>ประเภทของสัญญา </b><br>
+สัญญาซื้อขาย,สัญญาเช่า,สัญญายืม,สัญญาจ้างแรงงาน,สัญญากู้ยืมเงิน<br>
+<b>สัญญาเป็นโมฆะ vs โมฆียะ</b><br>
+<b>โมฆะ</b><br>
+สัญญาไม่สมบูรณ์ตั้งแต่แรกไม่มีผลตามกฎหมาย<br>
+<b>โมฆียะ</b><br>
+สัญญายังใช้ได้แต่สามารถบอกล้างได้<br>
+<B>การระงับสัญญา</B><br>
+คู่สัญญาปฏิบัติตามครบถ้วนคู่สัญญาตกลงยกเลิกสัญญาผิดเงื่อนไขคู่สัญญาฝ่ายหนึ่งตาย (บางกรณี)<br>
+ <div class="example">
+    <strong>โจทย์ที่ 1 </strong>  
+    สัญญาหมายถึง
+  </div>
+
+  <div class="question">
+  <b>คือข้อใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> คำสั่งของรัฐ</label>
+      <label><input type="radio" name="q1" value="b"> การบังคับให้ยอมรับ</label>
+      <label><input type="radio" name="q1" value="c"> ข้อตกลงระหว่างบุคคลตั้งแต่ 2 ฝ่ายขึ้นไป</label>
+      <label><input type="radio" name="q1" value="d"> การทำตามประเพณี</label>
+    </div>
+    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
+    <div class="answer" id="answer1">
+      เฉลย: ข้อตกลงระหว่างบุคคลตั้งแต่ 2 ฝ่ายขึ้นไป
+    </div>
+  </div>
+
+  <div class="example">
+    <strong>โจทย์ที่ 2 </strong>  
+    องค์ประกอบสำคัญของสัญญาที่สมบูรณ์
+  </div>
+
+  <div class="question">
+  <b>คือข้อใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> ต้องมีพยาน</label>
+      <label><input type="radio" name="q1" value="b"> คู่สัญญาต้องมีความสามารถตามกฎหมาย</label>
+      <label><input type="radio" name="q1" value="c"> ต้องจดทะเบียนทุกสัญญา</label>
+      <label><input type="radio" name="q1" value="d"> ต้องทำเป็นหนังสือเสมอ</label>
+    </div>
+    <button onclick="toggleAnswer('answer2')">ดูเฉลย</button>
+    <div class="answer" id="answer2">
+      เฉลย: คู่สัญญาต้องมีความสามารถตามกฎหมาย
+    </div>
+  </div>
+  <div class="example">
+    <strong>โจทย์ที่ 3 </strong>  
+    สัญญาที่ไม่สมบูรณ์และไม่มีผลทางกฎหมายตั้งแต่แรก
+  </div>
+
+  <div class="question">
+  <b>อย่างใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> สัญญาถูกต้อง</label>
+      <label><input type="radio" name="q1" value="b"> สัญญาเป็นโมฆะ</label>
+      <label><input type="radio" name="q1" value="c"> สัญญาเป็นโมฆียะ</label>
+      <label><input type="radio" name="q1" value="d"> สัญญาชั่วคราว</label>
+    </div>
+    <button onclick="toggleAnswer('answer3')">ดูเฉลย</button>
+    <div class="answer" id="answer3">
+      เฉลย: สัญญาเป็นโมฆะ
+    </div>
+  </div>
+</section>
