@@ -1,183 +1,122 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ภาษาไทย</title>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
-<style>
-  body {
-    font-family: 'Kanit', sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: #f9f9fb;
-    color: #333;
-  }
-  h1, h2 {
-    color: #6a1b9a;
-  }
-  section {
-    margin-bottom: 50px;
-    background: white;
-    padding: 25px 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
-  }
-  .summary {
-    font-size: 1.1em;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 30px;
-  }
-  .example {
-    background: #f0e6fa;
-    padding: 15px 20px;
-    border-left: 6px solid #6a1b9a;
-    margin-bottom: 25px;
-    border-radius: 10px;
-  }
-  .question {
-    background: #e8d9f2;
-    padding: 18px 22px;
-    border-radius: 12px;
-    margin: 20px 0;
-  }
-  .options label {
-    display: block;
-    margin: 10px 0;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  button {
-    background-color: #7b1fa2;
-    color: white;
-    border: none;
-    padding: 10px 22px;
-    font-size: 1.05em;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 12px;
-    transition: background-color 0.3s;
-  }
-  button:hover {
-    background-color: #6a1b9a;
-  }
-  .answer {
-    background: #d4edda;
-    padding: 18px 22px;
-    border-radius: 12px;
-    margin: 15px 0 30px;
-    border-left: 8px solid #28a745;
-    display: none;
-    font-size: 1em;
-    line-height: 1.6;
-  }
-  footer {
-    text-align: center;
-    margin-top: 60px;
-    color: #777;
-    font-size: 0.95em;
-  }
-</style>
-<script>
-  function toggleAnswer(id) {
-    const ans = document.getElementById(id);
-    ans.style.display = (ans.style.display === "block") ? "none" : "block";
-  }
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ศูนย์เรียนรู้สาระวิชาไทย</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e1bee7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    header {
+      font-size: 2.5em;
+      font-weight: 600;
+      color: #4a148c;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 40px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+      font-size: 1.6em;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 25px;
+      font-size: 1em;
+      border-radius: 8px;
+      text-decoration: none;
+      background: linear-gradient(45deg, #7b1fa2, #ce93d8);
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease;
+    }
+
+    .card a:hover {
+      background: linear-gradient(45deg, #6a1b9a, #ba68c8);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr; /* บนมือถือเป็น 1 คอลัมน์ */
+        max-width: 400px;
+      }
+      header {
+        font-size: 1.8em;
+      }
+      .card h2 {
+        font-size: 1.3em;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>🌈 ไทย 🌈</header>
 
-<h1>ภาษาไทย</h1>
-
-<section>
-  <h2>ภาษาไทย</h2>
-  <p class="summary">
-      <p>คำในภาษาไทยมีหลายชนิด เช่น คำนาม คำกริยา คำวิเศษณ์ ฯลฯ:</p>
-    <ul>
-      <li><strong>คำนาม</strong> หมายถึง ชื่อของคน สัตว์ สิ่งของ สถานที่</li>
-      <li><strong>คำกริยา</strong> คือคำที่แสดงการกระทำ</li>
-      <li><strong>คำวิเศษณ์</strong> ใช้ขยายคำอื่น เช่น บอกเวลา สถานที่ หรือความรู้สึก</li>
-    </ul>
-  </p>
-
-  <div class="question">
-    <b>โจทย์ 1:</b>  
-    ข้อใดคือคำนาม?
-    <div class="options">
-      <label><input type="radio" name="q1" value="a"> สวย</label>
-      <label><input type="radio" name="q1" value="b"> เดิน</label>
-      <label><input type="radio" name="q1" value="c"> โรงเรียน</label>
-      <label><input type="radio" name="q1" value="d"> เร็ว</label>
+  <div class="grid">
+    <div class="card">
+      <h2>การอ่านและการวิเคราะห์เรื่อง</h2>
+      <a href="read.html">เข้าเรียน</a>
     </div>
-    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
-    <div class="answer" id="answer1">
-      เฉลย: โรงเรียน
+    <div class="card">
+      <h2>วรรณคดีและวรรณกรรม</h2>
+      <a href="literature.html">เข้าเรียน</a>
+    </div>
+    <div class="card">
+      <h2>การใช้ภาษา</h2>
+      <a href="language.html">เข้าเรียน</a>
+    </div>
+    <div class="card">
+      <h2>การเขียน<br> (Circular Motion)</h2>
+      <a href="write.html">เข้าเรียน</a>
     </div>
   </div>
 
-  <div class="question">
-    <b>โจทย์ 2:</b>  
-    คำใดเป็นคำกริยา?
-    <div class="options">
-      <label><input type="radio" name="q2" value="a"> ความรัก</label>
-      <label><input type="radio" name="q2" value="b"> กระโดด</label>
-      <label><input type="radio" name="q2" value="c"> สีน้ำเงิน</label>
-      <label><input type="radio" name="q2" value="d"> แม่</label>
-    </div>
-    <button onclick="toggleAnswer('answer2')">ดูเฉลย</button>
-    <div class="answer" id="answer2">
-      เฉลย: กระโดด
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>ประโยคและส่วนประกอบของประโยค</h2>
-  <p class="summary">
-      <p>ประโยคคือถ้อยคำที่มีใจความสมบูรณ์ ประกอบด้วย:</p>
-    <ul>
-      <li><strong>ประธาน</strong> คือผู้กระทำ</li>
-      <li><strong>กริยา</strong> คือการกระทำ</li>
-      <li><strong>กรรม</strong> คือผู้รับการกระทำ (ในบางกรณี)</li>
-    </ul>
-  </p>
-  
-  <div class="question">
-    <b>โจทย์ 3:</b>  
-    ในประโยค “แมวไล่จับหนู” คำว่า “หนู” เป็นส่วนใดของประโยค?
-    <div class="options">
-      <label><input type="radio" name="q3" value="a"> ประธาน</label>
-      <label><input type="radio" name="q3" value="b"> กริยา</label>
-      <label><input type="radio" name="q3" value="c"> กรรม</label>
-      <label><input type="radio" name="q3" value="d"> ลักษณะนาม</label>
-    </div>
-    <button onclick="toggleAnswer('answer3')">ดูเฉลย</button>
-    <div class="answer" id="answer3">
-      เฉลย: กรรม
-    </div>
-  </div>
-
-  <div class="question">
-    <b>โจทย์ 4:</b>  
-    คำใดต่อไปนี้ทำหน้าที่เป็น “กริยา” ในประโยค?
-    <div class="options">
-      <label><input type="radio" name="q4" value="a"> บ้าน</label>
-      <label><input type="radio" name="q4" value="b"> วิ่ง</label>
-      <label><input type="radio" name="q4" value="c"> สีฟ้า</label>
-      <label><input type="radio" name="q4" value="d"> น้ำ</label>
-    </div>
-    <button onclick="toggleAnswer('answer4')">ดูเฉลย</button>
-    <div class="answer" id="answer4">
-      เฉลย: วิ่ง
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2025 ศูนย์เรียนรู้ภาษาไทย
-</footer>
-
+  <footer>© 2026 ศูนย์การเรียนรู้พัฒนาทักษะนักเรียนไทย 🇹🇭</footer>
 </body>
 </html>
