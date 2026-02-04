@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ชีวะ - การถ่ายทอดลักษณะทางพันธุกรรม</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Kanit', sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9fb;
+    color: #333;
+  }
+  h1, h2 {
+    color: #6a1b9a;
+  }
+  section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+  }
+  .summary {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  .example {
+    background: #f0e6fa;
+    padding: 15px 20px;
+    border-left: 6px solid #6a1b9a;
+    margin-bottom: 25px;
+    border-radius: 10px;
+  }
+  .question {
+    background: #e8d9f2;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  .options label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  button {
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 1.05em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #6a1b9a;
+  }
+  .answer {
+    background: #d4edda;
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 15px 0 30px;
+    border-left: 8px solid #28a745;
+    display: none;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #777;
+    font-size: 0.95em;
+  }
+</style>
+<script>
+  function toggleAnswer(id) {
+    const ans = document.getElementById(id);
+    ans.style.display = (ans.style.display === "block") ? "none" : "block";
+  }
+</script>
+</head>
+<body>
+
+<h1>ชีวะ</h1>
+
+<section>
+  <h2>การถ่ายทอดลักษณะทางพันธุกรรม(Inheritance of Genetic Traits)</h2>
+  <p class="summary">
+<b>ลักษณะทางพันธุกรรม</b> คือลักษณะที่ถ่ายทอดจากพ่อแม่สู่ลูก เช่น รูปร่าง,สีผิว,กรุ๊ปเลือด,ลักษณะทางพันธุกรรมบางโรค<br>
+<b>กฎของเมนเดล (Gregor Mendel)</b><br>
+<b>1. กฎการแยกตัวของยีน</b><br>
+ยีนแต่ละคู่จะแยกจากกันตอนสร้างเซลล์สืบพันธุ์ลูกจะได้รับยีนจากพ่อ 1 ตัว + แม่ 1 ตัว<br>
+<b>2. กฎการรวมกลุ่มอย่างอิสระ</b><br>
+ยีนต่างคู่กันจะแยกและรวมกลุ่มอย่างอิสระต่อกัน<br>
+<b>จีโนไทป์ & ฟีโนไทป์</b><br>
+<b>จีโนไทป์ (Genotype)</b> = แบบของยีน (AA, Aa, aa)<br>
+<b>ฟีโนไทป์ (Phenotype)</b> = ลักษณะที่แสดงออกให้เห็น<br>
+<b>ยีนเด่น – ยีนด้อย</b><br>
+<b>ยีนเด่น (Dominant)</b> แสดงลักษณะเสมอ (ใช้ตัวอักษรพิมพ์ใหญ่ เช่น A)<br>
+<b>ยีนด้อย (Recessive)</b> แสดงลักษณะเมื่ออยู่เป็นคู่ (ใช้ตัวพิมพ์เล็ก เช่น a)<br>
+<b>ตัวอย่าง</b><br>
+AA, Aa → แสดงลักษณะเด่น<br>                       
+aa → แสดงลักษณะด้อย<br>
+  <div class="example">
+    <strong>โจทย์ที่ 1 </strong>  
+    กำหนดให้ A เป็นยีนเด่น และ a เป็นยีนด้อย
+จีโนไทป์ใด
+  </div>
+
+  <div class="question">
+  <b>แสดงลักษณะเด่น</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> aa</label>
+      <label><input type="radio" name="q1" value="b"> AA</label>
+      <label><input type="radio" name="q1" value="c"> aa และ AA</label>
+      <label><input type="radio" name="q1" value="d"> aa เท่านั้น</label>
+    </div>
+    <button onclick="toggleAnswer('answer1')">ดูเฉลย</button>
+    <div class="answer" id="answer1">
+      เฉลย: aa และ AA
+    </div>
+  </div>
+
+  <div class="example">
+    <strong>โจทย์ที่ 2 </strong>  
+    ลูกได้รับยีนสำหรับลักษณะหนึ่งจากพ่อแม่
+  </div>
+
+  <div class="question">
+  <b>อย่างไร</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> จากพ่อเท่านั้น</label>
+      <label><input type="radio" name="q1" value="b"> จากแม่เท่านั้น</label>
+      <label><input type="radio" name="q1" value="c"> จากพ่อและแม่ฝ่ายละหนึ่ง</label>
+      <label><input type="radio" name="q1" value="d"> ได้รับแบบสุ่มจากโครโมโซมใดก็ได้</label>
+    </div>
+    <button onclick="toggleAnswer('answer2')">ดูเฉลย</button>
+    <div class="answer" id="answer2">
+      เฉลย: จากพ่อและแม่ฝ่ายละหนึ่ง
+    </div>
+  </div>
+  <div class="example">
+    <strong>โจทย์ที่ 3 </strong>  
+    “ฟีโนไทป์”
+  </div>
+
+  <div class="question">
+  <b>หมายถึงข้อใด</b><br>
+
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> รูปแบบของยีน</label>
+      <label><input type="radio" name="q1" value="b"> ลักษณะที่แสดงออกให้เห็น</label>
+      <label><input type="radio" name="q1" value="c"> ตำแหน่งของยีนบนโครโมโซม</label>
+      <label><input type="radio" name="q1" value="d"> การรวมกลุ่มของยีน                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </label>
+    </div>
+    <button onclick="toggleAnswer('answer3')">ดูเฉลย</button>
+    <div class="answer" id="answer3">
+      เฉลย: ลักษณะที่แสดงออกให้เห็น
+    </div>
+  </div>
+</section>
